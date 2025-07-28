@@ -2,20 +2,11 @@ name: test-workflow
 on: push
 
 jobs:
-  linting:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: make lint
-
-  testing:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: make test
 
   setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: make setup
+      - run: make lint
+      - run: make test
