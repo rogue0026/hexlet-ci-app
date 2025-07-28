@@ -1,21 +1,21 @@
-name: learning-workflow
+name: test-workflow
 on: push
 
 jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses actions/checkout@v4
-      - run make lint
+      - uses: actions/checkout@v4
+      - run: make lint
 
   testing:
     runs-on: ubuntu-latest
     steps:
-      - uses actions/checkout@v4
-      - run make test
+      - uses: actions/checkout@v4
+      - run: make test
 
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses actions/checkount@v4
-      - run make setup
+      - uses: actions/checkout@v4
+      - run: make setup
